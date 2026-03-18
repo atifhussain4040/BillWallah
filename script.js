@@ -10,7 +10,7 @@ window.addEventListener('mousemove', e => {
 });
 
 
-// ── Navbar: Dynamic Padding + Scroll State ──
+// ── Navbar: Dynamic Padding + Scroll Darken ──
 const navbar = document.getElementById('navbar');
 
 function setNavPadding() {
@@ -24,6 +24,7 @@ function setNavPadding() {
     navbar.style.padding = `0 ${px}px`;
 }
 setNavPadding();
+
 let navRaf;
 window.addEventListener('resize', () => {
     cancelAnimationFrame(navRaf);
@@ -41,7 +42,7 @@ const navMenu = document.getElementById('nav-menu');
 
 menuBtn.addEventListener('click', () => {
     const open = navMenu.classList.toggle('open');
-    menuBtn.innerHTML  = open ? '&#10005;' : '&#9776;';
+    menuBtn.innerHTML = open ? '&#10005;' : '&#9776;';
     menuBtn.setAttribute('aria-expanded', open);
 });
 
@@ -49,13 +50,14 @@ navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('open');
         menuBtn.innerHTML = '&#9776;';
+        menuBtn.setAttribute('aria-expanded', false);
     });
 });
 
 
 // ── Active Nav Link on Scroll ──
-const sections   = document.querySelectorAll('section[id]');
-const navLinks   = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -72,12 +74,7 @@ sections.forEach(s => sectionObserver.observe(s));
 
 // ── Hero Typed Text ──
 const typedEl = document.getElementById('heroTyped');
-const phrases = [
-    'Earn Cashback.',
-    'Pay Smarter.',
-    'Save More.',
-    'Live Better.',
-];
+const phrases = ['Earn Cashback.', 'Pay Smarter.', 'Save More.', 'Live Better.'];
 let pIdx = 0, cIdx = 0, deleting = false;
 
 function type() {
@@ -104,9 +101,8 @@ type();
 // ── Particle Canvas ──
 const canvas = document.getElementById('particles-canvas');
 const ctx    = canvas.getContext('2d');
-
-let particles = [];
 const PARTICLE_COUNT = 55;
+let particles = [];
 
 function resizeCanvas() {
     canvas.width  = canvas.offsetWidth;
@@ -118,14 +114,14 @@ window.addEventListener('resize', resizeCanvas);
 class Particle {
     constructor() { this.reset(true); }
     reset(init = false) {
-        this.x    = Math.random() * canvas.width;
-        this.y    = init ? Math.random() * canvas.height : canvas.height + 10;
-        this.size = Math.random() * 1.5 + 0.3;
-        this.speedY = -(Math.random() * 0.4 + 0.15);
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.alpha  = 0;
+        this.x        = Math.random() * canvas.width;
+        this.y        = init ? Math.random() * canvas.height : canvas.height + 10;
+        this.size     = Math.random() * 1.5 + 0.3;
+        this.speedY   = -(Math.random() * 0.4 + 0.15);
+        this.speedX   = (Math.random() - 0.5) * 0.25;
+        this.alpha    = 0;
         this.maxAlpha = Math.random() * 0.35 + 0.08;
-        this.fadeIn = true;
+        this.fadeIn   = true;
     }
     update() {
         this.y += this.speedY;
@@ -141,7 +137,7 @@ class Particle {
     draw() {
         ctx.save();
         ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = '#7aadff';
+        ctx.fillStyle   = '#7aadff';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -174,19 +170,12 @@ revealEls.forEach(el => revealObserver.observe(el));
 
 // ── Stat Counter Animation ──
 function formatStat(el, val) {
-    const divide  = parseFloat(el.dataset.divide  || 1);
-    const suffix  = el.dataset.suffix || '';
-    const target  = parseFloat(el.dataset.target);
-    const real    = val / divide;
-
-    if (target === 24000000) {
-        // ₹2.4Cr
-        return '₹' + (real / 10000000).toFixed(1) + 'Cr+';
-    } else if (target === 1800000) {
-        return (real / 100000).toFixed(0) + 'L+';
-    } else {
-        return real.toFixed(divide > 1 ? 1 : 0) + suffix;
-    }
+    const divide = parseFloat(el.dataset.divide || 1);
+    const target = parseFloat(el.dataset.target);
+    const real   = val / divide;
+    if      (target === 24000000) return '₹' + (real / 10000000).toFixed(1) + 'Cr+';
+    else if (target === 1800000)  return (real / 100000).toFixed(0) + 'L+';
+    else                          return real.toFixed(divide > 1 ? 1 : 0) + (el.dataset.suffix || '');
 }
 
 const statNums = document.querySelectorAll('.stat-num[data-target]');
@@ -195,11 +184,10 @@ const statObserver = new IntersectionObserver(entries => {
         if (!entry.isIntersecting) return;
         const el     = entry.target;
         const target = parseInt(el.dataset.target);
-        const dur    = 1800;
         const start  = performance.now();
-
+        const dur    = 1800;
         function tick(now) {
-            const p   = Math.min((now - start) / dur, 1);
+            const p    = Math.min((now - start) / dur, 1);
             const ease = 1 - Math.pow(1 - p, 3);
             el.textContent = formatStat(el, Math.round(ease * target));
             if (p < 1) requestAnimationFrame(tick);
@@ -212,33 +200,56 @@ const statObserver = new IntersectionObserver(entries => {
 statNums.forEach(el => statObserver.observe(el));
 
 
-// ── Smooth Scroll for anchor links ──
+// ── Smooth Scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
         const target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
         e.preventDefault();
-        const offset = target.getBoundingClientRect().top + window.scrollY - 70;
-        window.scrollTo({ top: offset, behavior: 'smooth' });
+        window.scrollTo({
+            top:      target.getBoundingClientRect().top + window.scrollY - 70,
+            behavior: 'smooth'
+        });
     });
 });
 
 
-// ── Contact Form ──
-function handleContact(e) {
+// ── Contact Form (Web3Forms) ──
+async function handleContact(e) {
     e.preventDefault();
-    const btn     = e.target.querySelector('.form-submit');
+    const form    = e.target;
+    const btn     = form.querySelector('.form-submit');
     const success = document.getElementById('formSuccess');
+    const error   = document.getElementById('formError');
+
+    success.classList.remove('show');
+    error.classList.remove('show');
     btn.textContent = 'Sending...';
     btn.disabled    = true;
-    setTimeout(() => {
-        btn.textContent = 'Message Sent ✓';
-        success.classList.add('show');
-        setTimeout(() => {
-            btn.textContent = 'Send Message ✦';
-            btn.disabled    = false;
-            success.classList.remove('show');
-            e.target.reset();
-        }, 4000);
-    }, 1200);
+
+    try {
+        const res  = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body:   new FormData(form)
+        });
+        const json = await res.json();
+
+        if (json.success) {
+            btn.textContent = 'Message Sent ✓';
+            success.classList.add('show');
+            form.reset();
+            setTimeout(() => {
+                btn.textContent = 'Send Message ✦';
+                btn.disabled    = false;
+                success.classList.remove('show');
+            }, 5000);
+        } else {
+            throw new Error('Failed');
+        }
+    } catch {
+        btn.textContent = 'Send Message ✦';
+        btn.disabled    = false;
+        error.classList.add('show');
+        setTimeout(() => error.classList.remove('show'), 5000);
+    }
 }

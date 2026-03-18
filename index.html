@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BillWallah – India's Most Trusted Bill Payment App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="resources/BillWallah_Logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.3/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<body>
+
+<!-- ░░ CURSOR GLOW ░░ -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ░░ NAVBAR ░░ -->
+<header>
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">BillWallah</span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+            <a href="#home"         class="nav-link">Home</a>
+            <a href="#how-it-works" class="nav-link">How it Works</a>
+            <a href="#features"     class="nav-link">Features</a>
+            <a href="#pricing"      class="nav-link">Pricing</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#team"         class="nav-link">Company</a>
+            <a href="#contact"      class="nav-link">Contact Us</a>
+        </div>
+        <div class="nav-btns">
+            <a href="#pricing" class="btn-cta">Let's Go ✦</a>
+            <button id="menu-btn" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </nav>
+</header>
+
+<!-- ░░ HERO ░░ -->
+<main>
+    <section class="hero" id="home">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-glow"></div>
+        <div class="hero-glow hero-glow--2"></div>
+
+        <div class="hero-content">
+            <div class="launch-badge animate-fade-up" style="--delay:0.1s">
+                <span class="badge-dot"></span>
+                <span>Guaranteed Cashback on Every Recharge — Up to 7%</span>
+            </div>
+
+            <h1 class="hero-title animate-fade-up" style="--delay:0.25s">
+                Pay Every Bill.<br>
+                <span class="hero-typed" id="heroTyped"></span>
+            </h1>
+
+            <p class="hero-sub animate-fade-up" style="--delay:0.45s">
+                BillWallah is India's most trusted bill payment app. Mobile recharges, electricity,
+                DTH, gas, water, insurance — pay everything from one app and earn <strong>guaranteed cashback</strong> on every single transaction.
+            </p>
+
+            <div class="hero-actions animate-fade-up" style="--delay:0.6s">
+                <a href="#pricing" class="btn-primary">
+                    Get Started Free <span class="btn-spark">✦</span>
+                </a>
+                <a href="#how-it-works" class="btn-ghost">
+                    See How It Works <span class="btn-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="hero-trust animate-fade-up" style="--delay:0.75s">
+                <span>🔒 UPI Certified</span>
+                <span class="trust-sep">·</span>
+                <span>🏦 RBI Compliant</span>
+                <span class="trust-sep">·</span>
+                <span>⭐ 4.9 Rated App</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ░░ MARQUEE ░░ -->
+<section class="marquee-section">
+    <p class="marquee-label">Trusted partners powering BillWallah</p>
+    <div class="marquee-track">
+        <div class="marquee-inner">
+            <span class="marquee-item">⚡ Razorpay</span>
+            <span class="marquee-item">☁ AWS</span>
+            <span class="marquee-item">◈ PhonePe</span>
+            <span class="marquee-item">▲ Paytm</span>
+            <span class="marquee-item">✦ Google Pay</span>
+            <span class="marquee-item">⬡ Juspay</span>
+            <span class="marquee-item">◆ BillDesk</span>
+            <span class="marquee-item">✳ NPCI / UPI</span>
+            <span class="marquee-item">⚡ Razorpay</span>
+            <span class="marquee-item">☁ AWS</span>
+            <span class="marquee-item">◈ PhonePe</span>
+            <span class="marquee-item">▲ Paytm</span>
+            <span class="marquee-item">✦ Google Pay</span>
+            <span class="marquee-item">⬡ Juspay</span>
+            <span class="marquee-item">◆ BillDesk</span>
+            <span class="marquee-item">✳ NPCI / UPI</span>
+        </div>
+    </div>
+    <a href="#team" class="marquee-cta">Meet our Partners <span>›</span></a>
+</section>
+
+<!-- ░░ STATS ░░ -->
+<section class="section stats-section" id="stats">
+    <div class="section-inner">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <p class="stat-num" data-target="24000000">₹0</p>
+                <p class="stat-label">Cashback Disbursed</p>
+            </div>
+            <div class="stat-card reveal" style="--rd:0.1s">
+                <p class="stat-num" data-target="1800000">0</p>
+                <p class="stat-label">Transactions Monthly</p>
+            </div>
+            <div class="stat-card reveal" style="--rd:0.2s">
+                <p class="stat-num" data-target="49" data-suffix=" ★" data-divide="10">0</p>
+                <p class="stat-label">App Store Rating</p>
+            </div>
+            <div class="stat-card reveal" style="--rd:0.3s">
+                <p class="stat-num" data-target="999" data-suffix="%" data-divide="10">0%</p>
+                <p class="stat-label">Uptime Guaranteed</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ ABOUT / WHAT WE DO ░░ -->
+<section class="section about-section" id="about">
+    <div class="section-inner about-inner">
+        <div class="about-text">
+            <div class="section-label reveal">✦ Who We Are</div>
+            <h2 class="section-title reveal" style="--rd:0.1s">We're a Bill Payment Company Built for Bharat</h2>
+            <p class="section-sub reveal" style="--rd:0.2s" style="margin-bottom:24px">
+                BillWallah was founded with one simple belief: every Indian deserves a faster, simpler, and more rewarding way to pay their bills.
+            </p>
+            <div class="about-points reveal" style="--rd:0.3s">
+                <div class="about-point">
+                    <span class="about-point-icon">📱</span>
+                    <div>
+                        <strong>One App for All Bills</strong>
+                        <p>Mobile recharges, electricity, DTH, gas, water, insurance, loan EMIs — everything in one place.</p>
+                    </div>
+                </div>
+                <div class="about-point">
+                    <span class="about-point-icon">💰</span>
+                    <div>
+                        <strong>Guaranteed Cashback, Every Time</strong>
+                        <p>Unlike other apps, we don't make you hunt for offers. You get up to 7% cashback on every single recharge — guaranteed, no conditions.</p>
+                    </div>
+                </div>
+                <div class="about-point">
+                    <span class="about-point-icon">🔒</span>
+                    <div>
+                        <strong>Bank-Grade Security</strong>
+                        <p>256-bit encryption, RBI-compliant infrastructure, and UPI-certified payment rails keep your money safe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-visual reveal" style="--rd:0.2s">
+            <div class="about-card-stack">
+                <div class="acard acard--back">
+                    <div class="acard-label">Total Saved</div>
+                    <div class="acard-value">₹4,820</div>
+                    <div class="acard-sub">This year via BillWallah</div>
+                </div>
+                <div class="acard acard--front">
+                    <div class="acard-label">Last Cashback</div>
+                    <div class="acard-value acard-value--green">+ ₹56.00</div>
+                    <div class="acard-sub">Jio ₹799 Recharge · Just now</div>
+                    <div class="acard-badge">✦ 7% cashback applied</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ FEATURES ░░ -->
+<section class="section features-section" id="features">
+    <div class="section-inner">
+        <div class="section-label reveal">✦ Features</div>
+        <h2 class="section-title reveal" style="--rd:0.1s">Everything in One Place</h2>
+        <p class="section-sub reveal" style="--rd:0.2s">From mobile recharges to electricity bills — pay everything from the BillWallah app and earn cashback on every rupee spent.</p>
+
+        <div class="features-grid">
+            <div class="feature-card feature-card--large reveal" style="--rd:0.05s">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Mobile Recharge</h3>
+                <p>Top up any number on Airtel, Jio, Vi, or BSNL in under 3 seconds. The fastest recharge in India — with guaranteed cashback on top.</p>
+                <div class="feature-bar">
+                    <span class="feature-bar-fill" style="--w:92%"></span>
+                    <span class="feature-bar-label">92% of users recharge daily</span>
+                </div>
+                <div class="feature-glow"></div>
+            </div>
+            <div class="feature-card reveal" style="--rd:0.1s">
+                <div class="feature-icon">💡</div>
+                <h3>Electricity Bills</h3>
+                <p>Pay MSEB, BESCOM, TPDDL and 80+ DISCOMs. Auto-remind before due dates.</p>
+            </div>
+            <div class="feature-card reveal" style="--rd:0.15s">
+                <div class="feature-icon">📡</div>
+                <h3>DTH & Cable TV</h3>
+                <p>Recharge Tata Play, Dish TV, Airtel Xstream and Sun Direct in seconds.</p>
+            </div>
+            <div class="feature-card reveal" style="--rd:0.2s">
+                <div class="feature-icon">🏦</div>
+                <h3>Loan EMI Payments</h3>
+                <p>Pay EMIs for all major NBFCs & banks. Never miss a due date again.</p>
+            </div>
+            <div class="feature-card reveal" style="--rd:0.25s">
+                <div class="feature-icon">🔥</div>
+                <h3>Gas & Water</h3>
+                <p>Indane, HP, Bharat gas bookings + municipality water bills covered.</p>
+            </div>
+            <div class="feature-card feature-card--wide reveal" style="--rd:0.3s">
+                <div class="feature-icon">🎯</div>
+                <h3>Up to 7% Guaranteed Cashback</h3>
+                <p>This isn't a promo. Every recharge you do through BillWallah earns you real, withdrawable cashback — up to 7% every time. No coupons, no conditions, no expiry.</p>
+                <div class="cashback-pill">₹7 back on every ₹100 recharge</div>
+                <div class="feature-glow feature-glow--blue"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ HOW IT WORKS ░░ -->
+<section class="section hiw-section" id="how-it-works">
+    <div class="section-inner">
+        <div class="section-label reveal">✦ How it Works</div>
+        <h2 class="section-title reveal" style="--rd:0.1s">Three Steps. Done.</h2>
+        <p class="section-sub reveal" style="--rd:0.15s">Getting started with BillWallah takes less than 60 seconds.</p>
+
+        <div class="hiw-grid">
+            <div class="hiw-card reveal" style="--rd:0.05s">
+                <div class="hiw-step">01</div>
+                <div class="hiw-icon">📲</div>
+                <h3>Download & Sign Up</h3>
+                <p>Download the BillWallah app, sign up with your phone number, and complete a quick KYC to unlock full cashback features.</p>
+            </div>
+            <div class="hiw-connector reveal" style="--rd:0.12s">→</div>
+            <div class="hiw-card reveal" style="--rd:0.18s">
+                <div class="hiw-step">02</div>
+                <div class="hiw-icon">➕</div>
+                <h3>Add Your Bills</h3>
+                <p>Add your mobile number, electricity account, DTH ID and any other services. BillWallah remembers them all.</p>
+            </div>
+            <div class="hiw-connector reveal" style="--rd:0.25s">→</div>
+            <div class="hiw-card reveal" style="--rd:0.3s">
+                <div class="hiw-step">03</div>
+                <div class="hiw-icon">💸</div>
+                <h3>Pay & Earn Cashback</h3>
+                <p>Pay via UPI, card, or wallet. Cashback up to 7% is credited to your BillWallah wallet instantly — withdraw anytime.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ APP SHOWCASE ░░ -->
+<section class="section app-section" id="app">
+    <div class="section-inner app-inner">
+        <div class="app-text">
+            <div class="section-label reveal">✦ Mobile App</div>
+            <h2 class="section-title reveal" style="--rd:0.1s">Your Bills.<br>Your Phone.<br>Your Cashback.</h2>
+            <p class="section-sub reveal" style="--rd:0.2s">
+                The BillWallah app puts every bill, every recharge, and every rupee of cashback right in your pocket. Available on Android & iOS.
+            </p>
+            <ul class="app-features reveal" style="--rd:0.3s">
+                <li><span>✦</span> One-tap autopay for recurring bills</li>
+                <li><span>✦</span> Smart due-date reminders</li>
+                <li><span>✦</span> Real-time cashback tracker</li>
+                <li><span>✦</span> Family account management</li>
+                <li><span>✦</span> Instant cashback withdrawal to bank</li>
+            </ul>
+            <div class="app-btns reveal" style="--rd:0.4s">
+                <a href="#" class="app-store-btn">
+                    <span class="store-icon">▲</span>
+                    <span><small>Download on the</small><br><strong>App Store</strong></span>
+                </a>
+                <a href="#" class="app-store-btn">
+                    <span class="store-icon">▶</span>
+                    <span><small>Get it on</small><br><strong>Google Play</strong></span>
+                </a>
+            </div>
+        </div>
+        <div class="app-mockup reveal" style="--rd:0.2s">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-notch"></div>
+                    <div class="phone-ui">
+                        <div class="pui-header">
+                            <span>BillWallah</span>
+                            <span class="pui-wallet">₹ 248.50</span>
+                        </div>
+                        <div class="pui-greeting">Good Morning, Rahul 👋</div>
+                        <div class="pui-cashback-banner">
+                            <span>🎯</span>
+                            <span>You've earned <strong>₹312</strong> this month!</span>
+                        </div>
+                        <div class="pui-grid">
+                            <div class="pui-item">📱<small>Recharge</small></div>
+                            <div class="pui-item">💡<small>Electricity</small></div>
+                            <div class="pui-item">📡<small>DTH</small></div>
+                            <div class="pui-item">🏦<small>Loan EMI</small></div>
+                        </div>
+                        <div class="pui-card">
+                            <div class="pui-card-label">Last Cashback</div>
+                            <div class="pui-card-amount">+ ₹56.00</div>
+                            <div class="pui-card-sub">Jio ₹799 · 2 mins ago · 7% cashback</div>
+                        </div>
+                        <div class="pui-card pui-card--dim">
+                            <div class="pui-card-label">Upcoming Bill</div>
+                            <div class="pui-card-amount">₹1,240</div>
+                            <div class="pui-card-sub">MSEB Electricity · Due in 3 days</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ TESTIMONIALS ░░ -->
+<section class="section testi-section" id="testimonials">
+    <div class="section-inner">
+        <div class="section-label reveal">✦ Testimonials</div>
+        <h2 class="section-title reveal" style="--rd:0.1s">Loved Across India</h2>
+        <p class="section-sub reveal" style="--rd:0.2s">Real people. Real cashback. Real savings.</p>
+
+        <div class="testi-grid">
+            <div class="testi-card reveal" style="--rd:0.05s">
+                <div class="testi-stars">★★★★★</div>
+                <p>"BillWallah has changed how I manage bills. I pay for my entire family — electricity, DTH, mobile — all from one app. The 7% cashback on recharge is genuinely real. I earned ₹800 last month alone."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="--tc:#1a6ff4">RK</div>
+                    <div>
+                        <strong>Rohit Kumar</strong>
+                        <small>Shop Owner, Patna</small>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal" style="--rd:0.12s">
+                <div class="testi-stars">★★★★★</div>
+                <p>"I do recharges for 200+ customers every month at my store. BillWallah gives me 7% back on every single one. It's become an extra income source for me. Nothing else comes close."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="--tc:#7c3aed">PS</div>
+                    <div>
+                        <strong>Priya Sharma</strong>
+                        <small>Retail Distributor, Mumbai</small>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal" style="--rd:0.2s">
+                <div class="testi-stars">★★★★★</div>
+                <p>"Super fast, never fails. I was using PhonePe but BillWallah's cashback is on another level. Set up autopay in 2 minutes. My bills pay themselves now basically."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="--tc:#059669">AM</div>
+                    <div>
+                        <strong>Arjun Mishra</strong>
+                        <small>Software Engineer, Bangalore</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ PRICING ░░ -->
+<section class="section pricing-section" id="pricing">
+    <div class="section-inner">
+        <div class="section-label reveal">✦ Pricing</div>
+        <h2 class="section-title reveal" style="--rd:0.1s">Simple, Transparent Plans</h2>
+        <p class="section-sub reveal" style="--rd:0.2s">No hidden fees. No surprises. Start free, upgrade when you're ready.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card reveal" style="--rd:0.05s">
+                <div class="pricing-plan">Free</div>
+                <div class="pricing-price">₹0 <span>/month</span></div>
+                <p class="pricing-desc">Perfect for personal bill payments.</p>
+                <ul class="pricing-features">
+                    <li>✓ All bill payments</li>
+                    <li>✓ Mobile recharges</li>
+                    <li>✓ Up to 3% cashback</li>
+                    <li>✓ 5 saved accounts</li>
+                    <li>✓ UPI & card payments</li>
+                    <li class="muted">✗ Priority support</li>
+                    <li class="muted">✗ Cashback analytics</li>
+                </ul>
+                <a href="#" class="pricing-btn pricing-btn--outline">Get Started Free</a>
+            </div>
+            <div class="pricing-card pricing-card--featured reveal" style="--rd:0.12s">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-plan">Pro</div>
+                <div class="pricing-price">₹199 <span>/month</span></div>
+                <p class="pricing-desc">For power users & distributors.</p>
+                <ul class="pricing-features">
+                    <li>✓ Everything in Free</li>
+                    <li>✓ Up to 7% cashback</li>
+                    <li>✓ Unlimited accounts</li>
+                    <li>✓ Autopay scheduling</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ Cashback analytics</li>
+                    <li>✓ Instant withdrawal</li>
+                </ul>
+                <a href="#" class="pricing-btn pricing-btn--primary">Start 14-Day Free Trial</a>
+            </div>
+            <div class="pricing-card reveal" style="--rd:0.2s">
+                <div class="pricing-plan">Business</div>
+                <div class="pricing-price">Custom</div>
+                <p class="pricing-desc">For distributors & enterprises.</p>
+                <ul class="pricing-features">
+                    <li>✓ Everything in Pro</li>
+                    <li>✓ API access</li>
+                    <li>✓ White-label option</li>
+                    <li>✓ Dedicated account manager</li>
+                    <li>✓ SLA guarantee</li>
+                    <li>✓ Custom integrations</li>
+                    <li>✓ Volume-based cashback</li>
+                </ul>
+                <a href="#contact" class="pricing-btn pricing-btn--outline">Contact Sales →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ TEAM ░░ -->
+<section class="section team-section" id="team">
+    <div class="section-inner">
+        <div class="section-label reveal">✦ The Team</div>
+        <h2 class="section-title reveal" style="--rd:0.1s">3 People. 1 Big Mission.</h2>
+        <p class="section-sub reveal" style="--rd:0.2s">We're a lean, focused team obsessed with making bill payments effortless and rewarding for every Indian. Small team, big impact.</p>
+
+        <div class="team-grid">
+            <div class="team-card reveal" style="--rd:0.05s">
+                <div class="team-avatar" style="--ac:#1a6ff4">
+                    <span>AK</span>
+                    <div class="avatar-ring"></div>
+                </div>
+                <h3>Aditya Kumar</h3>
+                <p class="team-role">CEO & Co-Founder</p>
+                <p class="team-bio">The vision behind BillWallah. Former fintech operator with deep roots in India's payment ecosystem. Believes every rupee of cashback matters to every Indian family.</p>
+                <div class="team-socials">
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+            <div class="team-card reveal" style="--rd:0.12s">
+                <div class="team-avatar" style="--ac:#7c3aed">
+                    <span>NV</span>
+                    <div class="avatar-ring"></div>
+                </div>
+                <h3>Neha Verma</h3>
+                <p class="team-role">CTO & Co-Founder</p>
+                <p class="team-bio">Built BillWallah's entire payment engine from scratch. Full-stack engineer with a passion for systems that never go down. Responsible for our 99.9% uptime.</p>
+                <div class="team-socials">
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+            <div class="team-card reveal" style="--rd:0.2s">
+                <div class="team-avatar" style="--ac:#f59e0b">
+                    <span>RS</span>
+                    <div class="avatar-ring"></div>
+                </div>
+                <h3>Rahul Singh</h3>
+                <p class="team-role">Head of Growth</p>
+                <p class="team-bio">Grew BillWallah from 0 to lakhs of users across Tier-2 and Tier-3 India. Expert in D2C growth loops and building communities that genuinely love a product.</p>
+                <div class="team-socials">
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ CONTACT ░░ -->
+<section class="section contact-section" id="contact">
+    <div class="section-inner contact-inner">
+        <div class="contact-text">
+            <div class="section-label reveal">✦ Contact Us</div>
+            <h2 class="section-title reveal" style="--rd:0.1s">Let's Talk</h2>
+            <p class="section-sub reveal" style="--rd:0.2s">Got a question, partnership idea, or want to explore the Business plan? We respond within 24 hours.</p>
+            <div class="contact-details reveal" style="--rd:0.3s">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:hello@billwallah.in">hello@billwallah.in</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+918000000000">+91 80000 00000</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Hajipur, Bihar, India 🇮🇳</span>
+                </div>
+            </div>
+        </div>
+        <form class="contact-form reveal" style="--rd:0.2s" onsubmit="handleContact(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Rahul Kumar" required />
+                </div>
+                <div class="form-group">
+                    <label>Phone / Email</label>
+                    <input type="text" placeholder="+91 98765 43210" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Subject</label>
+                <select>
+                    <option>General Enquiry</option>
+                    <option>Business / Partnership</option>
+                    <option>Technical Support</option>
+                    <option>Press / Media</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="4" placeholder="Tell us what's on your mind..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+                Send Message <span class="btn-spark">✦</span>
+            </button>
+            <p class="form-success" id="formSuccess">✓ Message sent! We'll be in touch within 24 hours.</p>
+        </form>
+    </div>
+</section>
+
+<!-- ░░ FINAL CTA ░░ -->
+<section class="section cta-section">
+    <div class="cta-glow"></div>
+    <div class="section-inner cta-inner">
+        <h2 class="cta-title reveal">Start Earning Cashback on Every Bill Today</h2>
+        <p class="cta-sub reveal" style="--rd:0.1s">Join lakhs of Indians already using BillWallah to pay bills and earn guaranteed cashback — up to 7% on every recharge.</p>
+        <div class="cta-actions reveal" style="--rd:0.2s">
+            <a href="#pricing" class="btn-primary">Get Started Free <span class="btn-spark">✦</span></a>
+            <a href="#app" class="btn-ghost">Download the App <span class="btn-arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <p class="footer-logo">BillWallah</p>
+            <p class="footer-tagline">India's Most Trusted<br>Bill Payment App.<br>Guaranteed Cashback.<br>Every Time.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <p class="footer-col-title">Product</p>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#app">Download App</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Company</p>
+                <a href="#about">About Us</a>
+                <a href="#team">Our Team</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Careers</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Support</p>
+                <a href="#contact">Help Center</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#contact">Report Issue</a>
+                <a href="#contact">Community</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Legal</p>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Grievance Officer</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 BillWallah Technologies Pvt. Ltd. All rights reserved. · RBI Compliant · UPI Certified</p>
+        <p>Made with ✦ in Bharat 🇮🇳</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
